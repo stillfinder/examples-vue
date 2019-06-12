@@ -21,6 +21,27 @@ li {
   padding-left: theme('padding.3');
 }
 
+.content > *,
+.content p {
+  @apply mb-3;
+}
+
+.content > h1 {
+  @apply text-4xl;
+}
+
+.content > h2 {
+  @apply text-3xl;
+}
+
+.content > h3 {
+  @apply text-2xl;
+}
+
+.content > h4 {
+  @apply text-xl;
+}
+
 .section {
   @apply px-3;
 }

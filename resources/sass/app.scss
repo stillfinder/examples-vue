@@ -46,6 +46,14 @@ li {
   @apply px-3;
 }
 
+.textbox {
+    @apply border-gray-500 border py-1 px-2;
+}
+
+.button {
+    @apply mx-4 border px-2 py-1 border-blue-400 rounded bg-blue-100;
+}
+
 @tailwind components;
 
 @tailwind utilities;

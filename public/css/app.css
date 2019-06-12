@@ -643,6 +643,28 @@ li {
   padding-right: 0.75rem;
 }
 
+.textbox {
+  border-color: #a0aec0;
+  border-width: 1px;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.button {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-width: 1px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  border-color: #63b3ed;
+  border-radius: 0.25rem;
+  background-color: #ebf8ff;
+}
+
 .container{
   width: 100%;
 }

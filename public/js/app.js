@@ -49354,7 +49354,15 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app',
   data: {
-    message: 'Test binding message'
+    message: 'Test binding message',
+    names: ['Samantha', 'Andrew', 'Jane'],
+    newName: ''
+  },
+  methods: {
+    addName: function addName() {
+      this.names.push(this.newName);
+      this.newName = '';
+    }
   }
 });
 

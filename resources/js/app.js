@@ -31,6 +31,15 @@ const app = new Vue({
     el: '#app',
 
     data: {
-        message: 'Test binding message'
-    }
+        message: 'Test binding message',
+        names: ['Samantha', 'Andrew', 'Jane'],
+        newName: '',
+    },
+
+    methods: {
+        addName() {
+            this.names.push(this.newName);
+            this.newName='';
+        }
+    },
 });

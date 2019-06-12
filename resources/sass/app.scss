@@ -1,8 +1,30 @@
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@tailwind base;
 
-// Variables
-@import 'variables';
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+body {
+  font-family: Roboto Slab, serif;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: theme('padding.4');
+}
+
+ol {
+  list-style-type: decimal;
+  padding-left: theme('padding.4');
+}
+
+li {
+  padding-left: theme('padding.3');
+}
+
+.section {
+  @apply px-3;
+}
+
+@tailwind components;
+
+@tailwind utilities;

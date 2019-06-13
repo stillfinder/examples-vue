@@ -26,6 +26,10 @@ Vue.component('task-list', require('./components/TaskList.vue').default);
 Vue.component('message', require('./components/Message.vue').default);
 Vue.component('modal', require('./components/Modal.vue').default);
 
+import {Tabs, Tab} from 'vue-tabs-component';
+Vue.component('tabs', Tabs);
+Vue.component('tab', Tab);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

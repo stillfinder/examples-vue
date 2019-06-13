@@ -14,6 +14,7 @@
 
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/tabs-component.css') }}" rel="stylesheet">
 </head>
 
 <body>

@@ -76,5 +76,21 @@
     </modal>
     <button class="button" @click="showCustomModal = true">Show modal</button>
 
+    <h3>Tabs component</h3>
+    <p>Source: https://github.com/spatie/vue-tabs-component</p>
+    <div class="-m-4">
+        <tabs class="flex flex-col">
+            <tab name="First tab">
+                First tab content
+            </tab>
+            <tab name="Second tab">
+                Second tab content
+            </tab>
+            <tab name="Third tab">
+                Third tab content
+            </tab>
+        </tabs>
+    </div>
+
 </div>
 @endsection

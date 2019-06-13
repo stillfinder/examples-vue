@@ -17,3 +17,6 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .tailwind();
 
+// mix.sass('resources/sass/tabs-component.css', 'public/css');
+mix.styles(['resources/sass/tabs-component.css'], 'public/css/tabs-component.css');
+

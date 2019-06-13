@@ -70,5 +70,11 @@
     <h3>Message component</h3>
     <message title="I'm a title" body="I'm a body. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"></message>
 
+    <h3>Modal component</h3>
+    <modal v-if="showCustomModal" @close="showCustomModal = false">
+        <p class="my-8 text-lg">custom modal text!!</p>
+    </modal>
+    <button class="button" @click="showCustomModal = true">Show modal</button>
+
 </div>
 @endsection

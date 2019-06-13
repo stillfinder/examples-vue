@@ -24,6 +24,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('task', require('./components/Task.vue').default);
 Vue.component('task-list', require('./components/TaskList.vue').default);
 Vue.component('message', require('./components/Message.vue').default);
+Vue.component('modal', require('./components/Modal.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -44,7 +45,8 @@ const app = new Vue({
             { description: 'Write a song', completed: true },
             { description: 'Buy a car', completed: false },
             { description: 'Clean up', completed: false },
-        ]
+        ],
+        showCustomModal: false,
     },
 
     methods: {

@@ -15,6 +15,7 @@
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
+
 <body>
     <div class="flex min-h-screen flex-col" id="app">
         @include('partials.navbar', ['active' => $active])

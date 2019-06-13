@@ -21,6 +21,10 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
+Vue.component('task', require('./components/Task.vue').default);
+Vue.component('task-list', require('./components/TaskList.vue').default);
+Vue.component('message', require('./components/Message.vue').default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -34,12 +38,37 @@ const app = new Vue({
         message: 'Test binding message',
         names: ['Samantha', 'Andrew', 'Jane'],
         newName: '',
+        bindedTitle: "Binded title storedi in Vue ",
+        isRed: false,
+        tasks: [
+            { description: 'Write a song', completed: true },
+            { description: 'Buy a car', completed: false },
+            { description: 'Clean up', completed: false },
+        ]
     },
 
     methods: {
         addName() {
+            if(this.newName.trim() ==='') {
+                return;
+            }
+
             this.names.push(this.newName);
             this.newName='';
+        },
+
+        toggleRed() {
+            this.isRed = ! this.isRed;
         }
     },
+
+    computed: {
+        reversedMessage() {
+            return this.message.split('').reverse().join('');
+        },
+
+        incompletedTasks() {
+            return this.tasks.filter(task => ! task.completed);
+        },
+    }
 });

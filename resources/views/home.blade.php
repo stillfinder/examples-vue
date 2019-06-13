@@ -31,5 +31,44 @@
         </div>
     </div>
 
+    <h2>Attribute and Class Binding</h2>
+    <button class="button" v-bind:title="bindedTitle">Bind title using v-bind:title</button>
+    <button class="button" :title="bindedTitle">Bind title using :title</button>
+    <button class="button" :class="{ 'text-red-500': isRed }" @click="toggleRed">Toggle red class</button> <- click
+
+    <h2>Computed Properties</h2>
+    <p>Original message: <strong>@{{ message }}</strong></p>
+    <p>Computed reversed message: <strong>@{{ reversedMessage}}</strong></p>
+
+    <div class="flex">
+        <div class="mr-12">
+            <p>All tasks</p>
+            <ul>
+                <li v-for="task in tasks" v-text="task.description"></li>
+            </ul>
+        </div>
+        <div>
+            <p>Filtered incompleted tasks</p>
+            <ul>
+                <li v-for="task in incompletedTasks" v-text="task.description"></li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Components</h2>
+
+    <h3>Simple task component</h3>
+    <ul>
+        <task>Learn english</task>
+        <task>Write a letter</task>
+        <task>Brainstorm new ideas</task>
+    </ul>
+
+    <h3>Components Within Components</h3>
+    <task-list></task-list>
+
+    <h3>Message component</h3>
+    <message title="I'm a title" body="I'm a body. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"></message>
+
 </div>
 @endsection

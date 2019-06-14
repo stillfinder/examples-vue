@@ -1,4 +1,4 @@
-@extends('layouts.main', ['active' => 'privacy-policy'])
+@extends('layouts.main', ['active' => 'ajax-form'])
 
 @section('title', 'Home')
 
@@ -7,7 +7,7 @@
 
     <h1>Ajax form using Vue JS</h1>
 
-    <form method="POST" action="/ajax-form" @submit.prevent="onSubmit" @keydown="form.errors.clear($event.target.name)">
+    <form method="POST" action="{{ route('ajax-form.store') }}" @submit.prevent="onSubmitAjaxForm" @keydown="ajaxform.errors.clear($event.target.name)">
 
         {{ csrf_field() }}
 
@@ -15,24 +15,24 @@
             <label for="email" class="form-label">Email address *</label>
 
             <input class="form-input"
-            v-bind:class="{ 'border-red-500': form.errors.has('email') }"
+            v-bind:class="{ 'border-red-500': ajaxform.errors.has('email') }"
             id="email" placeholder="Email" name="email" type="text"
-            value="" v-model="form.email">
+            value="" v-model="ajaxform.email">
 
-            <small class="form-text block mt-1 text-red-500" v-if="form.errors.has('email')"
-            v-text="form.errors.get('email')"></small>
+            <small class="form-text block mt-1 text-red-500" v-if="ajaxform.errors.has('email')"
+            v-text="ajaxform.errors.get('email')"></small>
         </div>
 
         <div>
             <label for="name" class="form-label">Name *</label>
 
             <input class="form-input"
-            v-bind:class="{ 'border-red-500': form.errors.has('name') }"
+            v-bind:class="{ 'border-red-500': ajaxform.errors.has('name') }"
             id="name" placeholder="Name" name="name" type="text" value=""
-            v-model="form.name">
+            v-model="ajaxform.name">
 
             <small class="form-text invalid-feedback block mt-1 text-red-500"
-            v-if="form.errors.has('name')" v-text="form.errors.get('name')"></small>
+            v-if="ajaxform.errors.has('name')" v-text="ajaxform.errors.get('name')"></small>
         </div>
 
         <div>
@@ -40,22 +40,22 @@
 
             <textarea
             class="form-input"
-            v-bind:class="{ 'border-red-500': form.errors.has('body') }"
+            v-bind:class="{ 'border-red-500': ajaxform.errors.has('body') }"
             id="body" name="body" cols="50" rows="10"
-            v-model="form.body"></textarea>
+            v-model="ajaxform.body"></textarea>
 
-            <small class="block mt-1 text-red-500" v-if="form.errors.has('body')"
-            v-text="form.errors.get('body')"></small>
+            <small class="block mt-1 text-red-500" v-if="ajaxform.errors.has('body')"
+            v-text="ajaxform.errors.get('body')"></small>
         </div>
 
         <div>
             <input class="btn btn-primary submit" type="submit" value="Submit"
-            :disabled="form.errors.any() || submittingFeedback">
+            :disabled="ajaxform.errors.any() || submittingAjaxForm">
 
-            <small class="align-baseline ml-4" v-if="submittingFeedback">We are submitting data</small>
+            <small class="align-baseline ml-4" v-if="submittingAjaxForm">We are submitting data</small>
         </div>
 
-        <modal v-if="showFeedbackModal" @close="showFeedbackModal = false">
+        <modal v-if="showSubmittedAjaxFormkModal" @close="showSubmittedAjaxFormkModal = false">
             <p class="my-8 text-lg">Thank you for your feedback!</p>
         </modal>
 

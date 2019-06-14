@@ -50619,13 +50619,13 @@ var app = new Vue({
       completed: false
     }],
     showCustomModal: false,
-    form: new _components_Form_js__WEBPACK_IMPORTED_MODULE_1__["Form"]({
+    ajaxform: new _components_Form_js__WEBPACK_IMPORTED_MODULE_1__["Form"]({
       'email': '',
       'name': '',
       'body': ''
     }),
-    showFeedbackModal: false,
-    submittingFeedback: false
+    showSubmittedAjaxFormkModal: false,
+    submittingAjaxForm: false
   },
   methods: {
     addName: function addName() {
@@ -50639,15 +50639,15 @@ var app = new Vue({
     toggleRed: function toggleRed() {
       this.isRed = !this.isRed;
     },
-    onSubmit: function onSubmit() {
+    onSubmitAjaxForm: function onSubmitAjaxForm() {
       var _this = this;
 
-      this.submittingFeedback = true;
-      this.form.post('/ajax-form').then(function (response) {
-        _this.submittingFeedback = false;
-        _this.showFeedbackModal = true;
+      this.submittingAjaxForm = true;
+      this.ajaxform.post('/ajax-form').then(function (response) {
+        _this.submittingAjaxForm = false;
+        _this.showSubmittedAjaxFormkModal = true;
       })["catch"](function (error) {
-        _this.submittingFeedback = false;
+        _this.submittingAjaxForm = false;
       });
     }
   },
@@ -50660,7 +50660,8 @@ var app = new Vue({
         return !task.completed;
       });
     }
-  }
+  },
+  mounted: function mounted() {}
 });
 
 /***/ }),

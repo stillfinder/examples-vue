@@ -57,14 +57,14 @@ const app = new Vue({
         ],
         showCustomModal: false,
 
-        form: new Form({
+        ajaxform: new Form({
             'email': '',
             'name': '',
             'body': '',
         }),
 
-        showFeedbackModal: false,
-        submittingFeedback: false,
+        showSubmittedAjaxFormkModal: false,
+        submittingAjaxForm: false,
     },
 
     methods: {
@@ -81,16 +81,16 @@ const app = new Vue({
             this.isRed = ! this.isRed;
         },
 
-        onSubmit() {
-            this.submittingFeedback = true;
+        onSubmitAjaxForm() {
+            this.submittingAjaxForm = true;
 
-            this.form.post('/ajax-form')
+            this.ajaxform.post('/ajax-form')
                 .then(response => {
-                    this.submittingFeedback =false;
-                    this.showFeedbackModal = true;
+                    this.submittingAjaxForm =false;
+                    this.showSubmittedAjaxFormkModal = true;
                 })
                 .catch(error => {
-                    this.submittingFeedback =false;
+                    this.submittingAjaxForm =false;
                 });
         },
     },
@@ -103,5 +103,9 @@ const app = new Vue({
         incompletedTasks() {
             return this.tasks.filter(task => ! task.completed);
         },
+    },
+
+    mounted() {
+
     }
 });

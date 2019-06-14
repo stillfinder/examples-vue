@@ -1,4 +1,4 @@
-@extends('layouts.main', ['active' => 'privacy-policy'])
+@extends('layouts.main', ['active' => 'home'])
 
 @section('title', 'Home')
 

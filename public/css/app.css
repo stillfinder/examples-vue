@@ -617,6 +617,44 @@ li {
   padding-left: 0.75rem;
 }
 
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 200;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.form-input {
+  width: 100%;
+  border-width: 1px;
+  border-radius: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.btn {
+  background-color: #4299e1;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  border-radius: 0.25rem;
+  color: #fff;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #3182ce;
+}
+
+.btn:disabled, .btn:disabled:hover {
+  background-color: #a0aec0;
+}
+
 .content > *,
 .content p {
   margin-bottom: 0.75rem;

@@ -33,6 +33,8 @@ Vue.component('tab', Tab);
 Vue.component('demo-inline', require('./components/DemoInline.vue').default);
 Vue.component('skills', require('./components/Skills.vue').default);
 
+import {Form} from './components/Form.js';
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -54,6 +56,15 @@ const app = new Vue({
             { description: 'Clean up', completed: false },
         ],
         showCustomModal: false,
+
+        form: new Form({
+            'email': '',
+            'name': '',
+            'body': '',
+        }),
+
+        showFeedbackModal: false,
+        submittingFeedback: false,
     },
 
     methods: {
@@ -68,7 +79,20 @@ const app = new Vue({
 
         toggleRed() {
             this.isRed = ! this.isRed;
-        }
+        },
+
+        onSubmit() {
+            this.submittingFeedback = true;
+
+            this.form.post('/ajax-form')
+                .then(response => {
+                    this.submittingFeedback =false;
+                    this.showFeedbackModal = true;
+                })
+                .catch(error => {
+                    this.submittingFeedback =false;
+                });
+        },
     },
 
     computed: {

@@ -21,6 +21,26 @@ li {
   padding-left: theme('padding.3');
 }
 
+.form-label {
+  @apply block text-sm font-thin mb-2 mt-4;
+}
+
+.form-input {
+  @apply w-full border rounded px-2 py-1;
+}
+
+.btn {
+  @apply bg-blue-500 py-2 px-3 rounded text-white text-sm cursor-pointer;
+}
+
+.btn:hover {
+  @apply bg-blue-600;
+}
+
+.btn:disabled, .btn:disabled:hover {
+  @apply bg-gray-500;
+}
+
 .content > *,
 .content p {
   @apply mb-3;

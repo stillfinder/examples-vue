@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::get('skills', function () {
     return ['Laravel', 'Vue', 'PHP'];
 });
+
+Route::resource('ajax-form', 'AjaxFormController');

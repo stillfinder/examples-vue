@@ -92,5 +92,10 @@
         </tabs>
     </div>
 
+    <h3>Inline template</h3>
+    <demo-inline inline-template>
+        <p>Hi! I'm inline template. Today is @{{ day }}</p>
+    </demo-inline>
+
 </div>
 @endsection

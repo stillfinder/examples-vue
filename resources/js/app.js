@@ -30,6 +30,8 @@ import {Tabs, Tab} from 'vue-tabs-component';
 Vue.component('tabs', Tabs);
 Vue.component('tab', Tab);
 
+Vue.component('demo-inline', require('./components/DemoInline.vue').default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

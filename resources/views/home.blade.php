@@ -97,5 +97,8 @@
         <p>Hi! I'm inline template. Today is @{{ day }}</p>
     </demo-inline>
 
+    <h2>Vue Ajax with Axios</h2>
+    <skills></skills>
+
 </div>
 @endsection

@@ -31,6 +31,7 @@ Vue.component('tabs', Tabs);
 Vue.component('tab', Tab);
 
 Vue.component('demo-inline', require('./components/DemoInline.vue').default);
+Vue.component('skills', require('./components/Skills.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
